@@ -13,6 +13,9 @@
 		53840FE7279DC49400742725 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53840FE5279DC49400742725 /* Main.storyboard */; };
 		53840FE9279DC49500742725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53840FE8279DC49500742725 /* Assets.xcassets */; };
 		53840FEC279DC49500742725 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53840FEA279DC49500742725 /* LaunchScreen.storyboard */; };
+		53840FF8279DDDFA00742725 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53840FF7279DDDFA00742725 /* Profile.swift */; };
+		53840FFA279DDE8200742725 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53840FF9279DDE8200742725 /* Segment.swift */; };
+		53840FFC279DDF5800742725 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53840FFB279DDF5800742725 /* Sound.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		53840FE8279DC49500742725 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53840FEB279DC49500742725 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53840FED279DC49500742725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53840FF7279DDDFA00742725 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		53840FF9279DDE8200742725 /* Segment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
+		53840FFB279DDF5800742725 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +62,10 @@
 		53840FDE279DC49400742725 /* MVVMDemo_EditProfile */ = {
 			isa = PBXGroup;
 			children = (
+				53840FF3279DC58200742725 /* Application */,
 				53840FF6279DC5BE00742725 /* View */,
 				53840FF5279DC5B800742725 /* View Model */,
 				53840FF4279DC5B000742725 /* Model */,
-				53840FF3279DC58200742725 /* Application */,
 				53840FE5279DC49400742725 /* Main.storyboard */,
 				53840FE8279DC49500742725 /* Assets.xcassets */,
 				53840FEA279DC49500742725 /* LaunchScreen.storyboard */,
@@ -80,6 +86,9 @@
 		53840FF4279DC5B000742725 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				53840FF7279DDDFA00742725 /* Profile.swift */,
+				53840FF9279DDE8200742725 /* Segment.swift */,
+				53840FFB279DDF5800742725 /* Sound.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +180,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				53840FE4279DC49400742725 /* ProfileViewController.swift in Sources */,
+				53840FFC279DDF5800742725 /* Sound.swift in Sources */,
+				53840FFA279DDE8200742725 /* Segment.swift in Sources */,
+				53840FF8279DDDFA00742725 /* Profile.swift in Sources */,
 				53840FE0279DC49400742725 /* AppDelegate.swift in Sources */,
 				53840FE2279DC49400742725 /* SceneDelegate.swift in Sources */,
 			);
