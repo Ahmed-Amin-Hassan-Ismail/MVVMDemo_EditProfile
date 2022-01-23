@@ -75,6 +75,10 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let section = ProfileSection(rawValue: section) else { return 1 }
         switch section {
+        case .Time:
+            return viewModel.numberOfRowsForSegmentType(type: .Main)
+        case .WarmUP:
+            return viewModel.numberOfRowsForSegmentType(type: .WarmUP)
         default:
             return 1
         }
@@ -87,6 +91,10 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         switch section {
         case .Time:
             return self.cellForTimeSection(indexPath: indexPath)
+            
+        case .WarmUP:
+            return self.cellForWarmUpSection(indexPath: indexPath)
+            
         default:
             return UITableViewCell()
         }
@@ -109,6 +117,21 @@ extension ProfileViewController {
         cell.detailTextLabel?.text = ""
         
         return cell
+    }
+    
+    private func cellForWarmUpSection(indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EditProfile", for: indexPath)
+        
+        switch indexPath.row {
+        case 0:
+            cell.textLabel?.text = "Enable"
+            return cell
+        case 1:
+            cell.textLabel?.text = viewModel.timeForWarmUpSegment()
+            return cell
+         default:
+           return UITableViewCell()
+        }
     }
 }
 

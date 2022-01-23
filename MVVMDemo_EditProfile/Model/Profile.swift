@@ -16,5 +16,16 @@ struct Profile {
         let segment = Segment(type: .Main)
         self.segments.append(segment)
     }
+    
+    func segmentOfType(type: SegmentType) -> Segment? {
+        switch type {
+        case .Main:
+            return Segment(type: .Main)
+        case .WarmUP:
+            return Segment(type: .WarmUP)
+        case .CoolDown:
+            return Segment(type: .CoolDown)
+        }
+    }
 
 }

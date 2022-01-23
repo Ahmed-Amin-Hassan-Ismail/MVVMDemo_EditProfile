@@ -20,6 +20,22 @@ class ProfileViewModel {
         return self.stringFromTimeInterval(timeInterval: profile.duration)
     }
     
+    func numberOfRowsForSegmentType(type: SegmentType) -> Int {
+        var result = 1
+        
+        guard let segment = profile.segmentOfType(type: type) else { return result}
+        switch type {
+        case .WarmUP:
+             result = (segment.enabled) ? 2 : 1
+        default:
+             result = 1
+        }
+        return result
+    }
+    
+    func timeForWarmUpSegment() -> String {
+        return self.stringFromTimeInterval(timeInterval: profile.segmentOfType(type: .WarmUP)!.duration)
+    }
 }
 
 //MARK: - Private Methods
