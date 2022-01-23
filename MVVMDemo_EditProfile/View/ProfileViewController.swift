@@ -7,6 +7,9 @@
 
 import UIKit
 
+
+
+//MARK: - Profile View Controller 
 class ProfileViewController: UIViewController {
     
     //MARK: - Properties
@@ -62,14 +65,47 @@ extension ProfileViewController {
 //MARK: - TableView
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return ProfileSection.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        guard let section = ProfileSection(rawValue: section) else { return 1 }
+        switch section {
+        default:
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let section = ProfileSection(rawValue: indexPath.section) else {
+            return UITableViewCell()
+        }
+        switch section {
+        case .Time:
+            return self.cellForTimeSection(indexPath: indexPath)
+        default:
+            return UITableViewCell()
+        }
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let sectionTitle = ProfileSection(rawValue: section) else { return nil }
+        return sectionTitle.sectionTitle()
+    }
+}
+
+
+//MARK: - Configure Cell
+extension ProfileViewController {
     
+    private func cellForTimeSection(indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EditProfile", for: indexPath)
+        
+        cell.textLabel?.text = ""
+        cell.detailTextLabel?.text = ""
+        
+        return cell
+    }
 }
 
