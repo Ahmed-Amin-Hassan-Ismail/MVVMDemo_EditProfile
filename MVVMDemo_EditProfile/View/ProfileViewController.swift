@@ -12,6 +12,9 @@ import UIKit
 //MARK: - Profile View Controller 
 class ProfileViewController: UIViewController {
     
+    //MARK: - Init View Model
+    let viewModel = ProfileViewModel(withProfile: Profile())
+    
     //MARK: - Properties
     private lazy var tableView: UITableView = {
        let table = UITableView()
@@ -102,7 +105,7 @@ extension ProfileViewController {
     private func cellForTimeSection(indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EditProfile", for: indexPath)
         
-        cell.textLabel?.text = ""
+        cell.textLabel?.text = viewModel.timeForProfile()
         cell.detailTextLabel?.text = ""
         
         return cell
